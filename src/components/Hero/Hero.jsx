@@ -1,22 +1,53 @@
-import React from 'react'
-import './Hero.css'
+import React, { useEffect, useRef } from "react";
+import "./Hero.css";
+import Typed from "typed.js";
+
 const Hero = () => {
+  const el = useRef(null);
+  const typed = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      strings: [
+        "Hi, I am Gunjan Tiwari",
+        "A Java Developer",
+        "A MERN Stack Developer",
+        "A Full-Stack Enthusiast"
+      ],
+      typeSpeed: 50,
+      backSpeed: 40,
+      loop: true
+    };
+
+    typed.current = new Typed(el.current, options);
+
+    return () => {
+      typed.current.destroy();
+    };
+  }, []);
+
   return (
     <section className="hero-container">
       <div className="hero-content">
-        <h2>Learning fast, Dreaming big, Building with purpose.</h2>
+        {/* Replaced static h2 with Typed.js */}
+        <h2>
+          <span ref={el}></span>
+        </h2>
+
         <p>
-          Full-Stack Developer in the Making | Building Responsive Frontends and Scalable Backends with React, Java, Spring & SQL
+          Hey there! I am GUNJAN TIWARI a Full-Stack Developer in the Making | Building Responsive Frontends and Scalable Backends with React, Java, Spring & SQL
         </p>
-        <div><a
-  href="/resume.pdf"
-  download
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <button className="download-btn">Download Resume</button>
-</a>
-</div>
+
+        <div>
+          <a
+            href="/assets/image/Gunjan_tiwari.pdf"
+            download="Gunjan_tiwari.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="download-btn">Download Resume</button>
+          </a>
+        </div>
       </div>
 
       <div className="hero-img">
@@ -40,8 +71,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-
   );
 };
 
-export default Hero
+export default Hero;

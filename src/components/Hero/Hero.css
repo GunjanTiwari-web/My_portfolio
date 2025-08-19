@@ -191,3 +191,24 @@ text-align: center;
 .download-btn:hover {
   background-color: #574fd6;
 }
+
+/* Light Theme */
+body.light .hero-content h2,
+body.light .hero-content p {
+  color: #111; /* dark readable text */
+}
+
+body.light .download-btn {
+  background-color: #6c63ff; /* keep purple */
+  color: #fff; /* readable on light bg */
+}
+
+body.light .download-btn:hover {
+  background-color: #574fd6;
+}
+
+/* Dark Theme */
+body.dark .hero-content h2,
+body.dark .hero-content p {
+  color: #fff; /* keep white text */
+}
