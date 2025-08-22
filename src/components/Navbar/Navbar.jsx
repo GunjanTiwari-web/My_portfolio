@@ -91,11 +91,11 @@ const toggleTheme = () => {
 
           {/* Mobile Menu Button */}
           <button className="menu-btn" onClick={toggleMenu}>
-            <span
+           <span
               className={"material-symbols-outlined"}
               style={{ fontSize: "1.8rem" }}
             >
-              {openMenu ? "close" : "menu"}
+              {openMenu ? "close" : "="}
             </span>
           </button>
         </div>

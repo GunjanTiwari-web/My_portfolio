@@ -1,13 +1,38 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import Typed from 'typed.js'
 import './Hero.css'
 
 const Hero = () => {
+  const typedRef = useRef(null)
+
+  useEffect(() => {
+    const typed = new Typed(typedRef.current, {
+      strings: [
+        "Hey There! I am Gunjan Tiwari",
+        " A Java Enthusiast",
+       " A Responsive UI Builder",
+          "A Tech Explorer",
+        " And Full-Stack Developer in the Making."
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true,
+      smartBackspace: true,
+    })
+
+    return () => {
+      typed.destroy()
+    }
+  }, [])
+
   return (
     <section className="hero-container">
       <div className="hero-content">
-        <h2>Learning fast, Dreaming big, Building with purpose.</h2>
+        {/* Replace h2 with span for typed.js */}
+        <h2><span ref={typedRef}></span></h2>
         <p>
-          Hey there! I am GUNJAN TIWARI a Full-Stack Developer in the Making | Building Responsive Frontends and Scalable Backends with React, Java, Spring & SQL
+          Hey there! I am a Full-Stack Developer in the Making | Building Responsive Frontends and Scalable Backends with React, Java, Spring & SQL
         </p>
         <div>
           <a

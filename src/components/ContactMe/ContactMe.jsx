@@ -10,11 +10,11 @@ const ContactMe = () => {
     <div className='contact-content'>
         <div style={{flex: 1}}>
           <ContactInfoCard 
-          iconUrl="./assets/image/email.png"
+          iconUrl={`${process.env.PUBLIC_URL}/assets/image/email.png`}
           text="gunjantiwari.gcsb@gmail.com"
           />
           <ContactInfoCard 
-          iconUrl="./assets/image/github.png"
+          iconUrl={`${process.env.PUBLIC_URL}/assets/image/github.png`}
           text="https://github.com/GunjanTiwari-web"
           />
         </div>
